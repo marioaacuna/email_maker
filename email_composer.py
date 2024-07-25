@@ -1,6 +1,3 @@
-# This script is a simple email composer that uses Ollama to generate an email based on the format and what to fields.
-# The user can input their desired format and what they want in the email, and then the script will use Ollama to generate an email based on those inputs.
-
 import tkinter as tk
 import ollama
 import json
@@ -23,7 +20,7 @@ config = load_config()
 
 def generate_response():
     email_format = format_entry.get()
-    what_to = What_entry.get()
+    what_to = what_entry.get()  # Fixed: Corrected variable name from 'What_entry' to 'what_entry'
 
     prompt = f'Given the format """ {email_format} """, You must compose an email. The email needs to include the following: """{what_to}""". Sign as """ Mario""" '
 
@@ -54,7 +51,7 @@ format_entry.pack()
 
 # What to entry
 tk.Label(root, text="What to:").pack()
-what_entry = tk.Entry(root, width=25)
+what_entry = tk.Entry(root, width=25)  # Fixed: Corrected variable name from 'What_entry' to 'what_entry'
 what_entry.pack()
 
 # Button to generate response
